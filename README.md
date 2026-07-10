@@ -38,3 +38,9 @@
 - Q35 - Multi-Level Grouping (Dept + Salary Range)
 - Q36 - Department Wise Top Earner Name
 - Q37 - Department Wise Second Highest Salary
+### revision
+- Q01 - Filter Even Numbers
+- Q02 - Square Even Numbers
+- Q03 - Remove Duplicates
+- Q04 - Sort Strings by Length
+- Q05 - Find First Element Greater Than 50

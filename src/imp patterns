@@ -1,0 +1,22 @@
+A good Stream pipeline usually looks like:
+Source
+   ↓
+filter()
+   ↓
+map()
+   ↓
+sorted() (if needed)
+   ↓
+collect()/toList()/findFirst()/count()
+This is the pattern you'll use in most interview questions.
+
+
+
+Remember Forever
+Use comparingInt() when comparing primitive int values.
+
+Examples:
+Comparator.comparingInt(Employee::getSalary)
+Comparator.comparingInt(String::length)
+Comparator.comparingInt(Product::getPrice)
+
