@@ -44,3 +44,8 @@
 - Q03 - Remove Duplicates
 - Q04 - Sort Strings by Length
 - Q05 - Find First Element Greater Than 50
+- Q06 - Count Occurrences
+- Q07 - Group Strings by Length
+- Q08 - Group Uppercase Names by Length
+- Q09 - Partition Even and Odd Numbers
+- Q010 - Convert List to Map

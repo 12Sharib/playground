@@ -10,7 +10,7 @@ sorted() (if needed)
 collect()/toList()/findFirst()/count()
 This is the pattern you'll use in most interview questions.
 
-
+----------------------------------------------------------------------
 
 Remember Forever
 Use comparingInt() when comparing primitive int values.
@@ -19,4 +19,125 @@ Examples:
 Comparator.comparingInt(Employee::getSalary)
 Comparator.comparingInt(String::length)
 Comparator.comparingInt(Product::getPrice)
+
+-------------------------------------------------------------------------
+Whenever your key is the object itself, prefer Function.identity() over x -> x.
+Function.identity() literally means:
+
+"Return the object as it is."
+
+----------------------------------------------------------------------
+🧠 Interview Tip
+
+Remember this syntax:
+
+groupingBy(keyExtractor)
+
+is internally equivalent to:
+
+groupingBy(
+    keyExtractor,
+    Collectors.toList()
+)
+
+So whenever you see groupingBy, think:
+
+"What collector do I want inside each group?"
+
+Possible downstream collectors:
+
+toList()
+counting()
+mapping()
+averagingInt()
+summingInt()
+summarizingInt()
+maxBy()
+minBy()
+collectingAndThen()
+
+This mindset will make advanced collector questions much easier.
+
+⭐ Remember Forever
+
+groupingBy has a default downstream collector of toList().
+
+
+-----------------------------------------------------------------------------
+
+🧠 This is an important lesson
+
+Ask yourself:
+
+"What should be the value type of my Map?"
+
+If the value should be:
+
+List<T> → toList()
+Set<T> → toSet()
+String → joining()
+Long → counting()
+Double → averagingInt()
+
+The downstream collector determines the value type.
+
+⭐ Remember Forever
+
+mapping() only transforms the elements. The final value type depends on the downstream collector.
+
+mapping(
+    transform,
+    downstreamCollector
+)
+
+For example:
+
+mapping(Employee::getName, toList())
+
+↓
+
+Map<Dept, List<String>>
+
+
+---------------------------------------------------------------------------
+🧠 Interview Follow-up (Very Important)
+
+Suppose I ask you:
+
+Why did you use partitioningBy() instead of groupingBy()?
+
+What would you answer?
+
+The expected answer is:
+
+partitioningBy()	groupingBy()
+Only for boolean conditions	For any type of key
+Always returns Map<Boolean, List<T>>	Returns Map<K, List<T>>
+Optimized for two groups	Can create any number of groups
+Example
+Collectors.partitioningBy(n -> n % 2 == 0)
+
+Result:
+
+{
+    true=[2,4,6],
+    false=[1,3,5]
+}
+Collectors.groupingBy(n -> n % 3)
+
+Result:
+
+{
+    0=[3,6],
+    1=[1,4],
+    2=[2,5]
+}
+
+See the difference?
+
+2 groups → partitioningBy()
+More than 2 groups → groupingBy()
+⭐ Remember Forever
+
+If the classifier returns boolean, think partitioningBy(). Otherwise, think groupingBy().
 
