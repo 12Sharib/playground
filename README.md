@@ -49,3 +49,8 @@
 - Q08 - Group Uppercase Names by Length
 - Q09 - Partition Even and Odd Numbers
 - Q010 - Convert List to Map
+- Q011 - Find Longest String
+- Q012 - Salary Statistics 
+- Q013 - Flatten List of Lists
+- Q014 - Join Employee Names
+- Q015 - Unmodifiable Uppercase List

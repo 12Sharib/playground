@@ -141,3 +141,82 @@ More than 2 groups → groupingBy()
 
 If the classifier returns boolean, think partitioningBy(). Otherwise, think groupingBy().
 
+------------------------------------------------------------------------------
+
+⭐ Remember Forever
+
+Use:
+
+max() / min() → when you need a single largest/smallest element.
+sorted() → when you need the complete ordering.
+
+----------------------------------------------------------------------------------
+
+⭐ Remember Forever
+Requirement	Collector
+Sum	summingInt()
+Average	averagingInt()
+Count	counting()
+All statistics	summarizingInt() ✅
+
+----------------------------------------------------------------------------------
+
+🧠 Interview Question
+What happens if you use map() instead?
+list.stream()
+    .map(List::stream)
+
+The result is:
+
+Stream<Stream<Integer>>
+
+Not what we want.
+
+With flatMap():
+list.stream()
+    .flatMap(List::stream)
+
+The result is:
+
+Stream<Integer>
+
+That's why it's called flatMap—it flattens nested streams into a single stream.
+
+⭐ Remember Forever
+map()
+List<String>
+        ↓
+Stream<String>
+        ↓ map(String::length)
+Stream<Integer>
+
+One input → One output.
+
+flatMap()
+List<List<Integer>>
+        ↓
+Stream<List<Integer>>
+        ↓ flatMap(List::stream)
+Stream<Integer>
+
+One input → Many outputs, then flatten into one stream.
+
+
+-----------------------------------------------------------------------------
+
+
+🧠 Interview Tip
+
+Ask yourself:
+
+Am I transforming the entire stream or transforming elements inside another collector?
+
+Transforming the stream → map()
+Transforming within groupingBy(), partitioningBy(), etc. → Collectors.mapping()
+⭐ Remember Forever
+Situation	Use
+Before collect()	map() ✅
+Inside another collector	Collectors.mapping() ✅
+
+------------------------------------------------------------------------------
+
