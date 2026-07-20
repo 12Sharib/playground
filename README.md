@@ -39,6 +39,7 @@
 - Q36 - Department Wise Top Earner Name
 - Q37 - Department Wise Second Highest Salary
 - Q38 - Department Wise Highest Paid Employee Name
+- Q39 - Department Wise Top Two Highest Paid Employees
 ### revision
 - Q01 - Filter Even Numbers
 - Q02 - Square Even Numbers

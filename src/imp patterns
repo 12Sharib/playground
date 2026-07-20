@@ -258,3 +258,38 @@ mapping()
 
 -------------------------------------------------------------------------
 
+🧠 Interview Discussion
+
+Suppose I ask:
+
+Why didn't you use maxBy()?
+
+Expected answer:
+
+Because maxBy() returns only a single element. Here, I need the top two employees, so I first collect all employees for each department, then sort them, limit the result to two, and return that list using collectingAndThen().
+
+That's exactly the reasoning interviewers want to hear.
+
+⭐ Remember Forever
+
+When you hear:
+
+Top N per group
+
+Your mental pattern should immediately be:
+
+groupingBy(
+    ...,
+    collectingAndThen(
+        toList(),
+        list -> list.stream()
+                .sorted(...)
+                .limit(N)
+                .toList()
+    )
+)
+
+This is a reusable pattern for many interview questions.
+
+---------------------------------------------------------------------
+
