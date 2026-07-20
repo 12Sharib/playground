@@ -38,6 +38,7 @@
 - Q35 - Multi-Level Grouping (Dept + Salary Range)
 - Q36 - Department Wise Top Earner Name
 - Q37 - Department Wise Second Highest Salary
+- Q38 - Department Wise Highest Paid Employee Name
 ### revision
 - Q01 - Filter Even Numbers
 - Q02 - Square Even Numbers

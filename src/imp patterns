@@ -220,3 +220,41 @@ Inside another collector	Collectors.mapping() ✅
 
 ------------------------------------------------------------------------------
 
+🧠 Interview Discussion
+
+Suppose the interviewer asks:
+
+Why did you use collectingAndThen()?
+
+Expected answer:
+
+Because Collectors.maxBy() returns an Optional<Employee>, but the required output is Map<String, String>. collectingAndThen() lets me transform the Optional<Employee> into the employee's name before returning the final map.
+
+That's exactly the purpose of collectingAndThen()—apply a finishing transformation to the collected result.
+
+⭐ Remember Forever
+
+Think of collectingAndThen() as:
+
+collect(...)
+      ↓
+finish(...)
+
+General syntax:
+
+Collectors.collectingAndThen(
+    downstreamCollector,
+    finisherFunction
+)
+
+You'll see this pattern often with:
+
+maxBy()
+minBy()
+toList()
+toSet()
+mapping()
+
+
+-------------------------------------------------------------------------
+
