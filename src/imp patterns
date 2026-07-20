@@ -293,3 +293,53 @@ This is a reusable pattern for many interview questions.
 
 ---------------------------------------------------------------------
 
+🧠 Interview Discussion
+
+Suppose I ask:
+
+Can this be done without sorting?
+
+The answer is:
+
+Yes, but it becomes much more complex.
+
+You could maintain the top two salaries while traversing each group using a custom collector or a priority queue.
+
+Complexity comparison:
+
+Current solution:
+
+Grouping → O(n)
+Sorting each department → O(k log k)
+
+Alternative:
+
+Grouping with a custom collector → O(k) per department
+
+For interview purposes, your solution is clear, maintainable, and completely acceptable unless the interviewer specifically asks for an optimized approach.
+
+⭐ Remember Forever
+
+You've now learned a very powerful collector composition pattern:
+
+groupingBy(
+    key,
+    collectingAndThen(
+        toList(),
+        list -> list.stream()
+                .sorted(...)
+                .limit(...)
+                .mapToInt(...)
+                .average()
+                .orElse(...)
+    )
+)
+
+This pattern can easily be adapted to compute:
+
+Sum of top N
+Average of top N ✅
+Names of top N
+Count of top N
+Any custom aggregate after selecting the top N
+
