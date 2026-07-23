@@ -435,4 +435,52 @@ Maximum marks
 Highest-priced products
 Latest orders
 
-------------------------------------------------------
+-------------------------------------------------------------
+
+🧠 Why mapping() instead of map()?
+
+This is one of the most common interview follow-up questions.
+
+❌ This won't work:
+employees.stream()
+        .map(Employee::getName)
+        .collect(
+            Collectors.groupingBy(Employee::getDepartment)
+        );
+
+After map(Employee::getName), the stream contains Strings, so Employee::getDepartment is no longer available.
+
+✅ Correct approach
+
+Keep the stream as Employee objects:
+
+groupingBy(
+    Employee::getDepartment,
+    mapping(
+        Employee::getName,
+        joining(", ")
+    )
+)
+
+The transformation happens inside each group, which is exactly what mapping() is for.
+
+⭐ Remember Forever
+map()
+
+Transforms the entire stream before collecting.
+
+stream()
+    .map(...)
+    .collect(...)
+mapping()
+
+Transforms the elements inside another collector.
+
+groupingBy(
+    key,
+    mapping(..., downstream)
+)
+
+This distinction is asked surprisingly often in Stream API interviews.
+
+------------------------------------------------------------------
