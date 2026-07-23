@@ -343,3 +343,58 @@ Names of top N
 Count of top N
 Any custom aggregate after selecting the top N
 
+----------------------------------------------------------
+🧠 Interview Discussion
+
+Suppose I ask:
+
+What is the return type of this collector?
+
+Answer:
+
+Map<String, IntSummaryStatistics>
+
+Each department maps to an IntSummaryStatistics object.
+
+Example:
+
+IT =
+count=3
+sum=200000
+min=50000
+average=66666.67
+max=80000
+💡 Another Interview Question
+
+If the interviewer says:
+
+"I only need the average salary department-wise."
+
+Would you still use summarizingInt()?
+
+No.
+
+You should use the most appropriate collector:
+
+Collectors.averagingInt(Employee::getSalary)
+
+Similarly:
+
+Only sum → summingInt()
+Only average → averagingInt()
+Only count → counting()
+Everything → summarizingInt()
+
+Choosing the simplest suitable collector is a good interview habit.
+
+⭐ Remember Forever
+
+Think of summarizingInt() as:
+
+count +
+sum +
+min +
+max +
+average
+
+--------------------------------------------------------
