@@ -397,4 +397,42 @@ min +
 max +
 average
 
---------------------------------------------------------
+--------------------------------------------------------------
+
+🧠 Interview Discussion
+
+Suppose the interviewer asks:
+
+Can this be done in one stream?
+
+The honest answer is:
+
+Not cleanly with the standard Stream API.
+
+Because you need to know the maximum salary before you can decide which employees to keep.
+
+Without custom collectors or more advanced techniques, a two-pass solution like yours is perfectly acceptable and very readable.
+
+⭐ Remember Forever
+
+When the problem says:
+
+Find all elements having the maximum value
+
+Think:
+
+Step 1:
+Find max value
+
+Step 2:
+Filter using that value
+
+This pattern applies to:
+
+Highest salary employees ✅
+Longest strings
+Maximum marks
+Highest-priced products
+Latest orders
+
+------------------------------------------------------

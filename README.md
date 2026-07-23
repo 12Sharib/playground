@@ -42,6 +42,7 @@
 - Q39 - Department Wise Top Two Highest Paid Employees
 - Q40 - Department Wise Average of Top Two Salaries
 - Q41 - Department Wise Salary Summary
+- Q42 - Find Employees Having Highest Salary Across All Departments
 ### revision
 - Q01 - Filter Even Numbers
 - Q02 - Square Even Numbers
