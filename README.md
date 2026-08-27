@@ -45,6 +45,7 @@
 - Q42 - Find Employees Having Highest Salary Across All Departments
 - Q43 - Group Employees by Department and Join Names
 - Q44 - Department Wise Salary Range
+- Q45 - Department Wise Highest and Lowest Paid Employee
 ### revision
 - Q01 - Filter Even Numbers
 - Q02 - Square Even Numbers
