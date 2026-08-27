@@ -46,6 +46,7 @@
 - Q43 - Group Employees by Department and Join Names
 - Q44 - Department Wise Salary Range
 - Q45 - Department Wise Highest and Lowest Paid Employee
+- Q46 - Department Wise Employee Summary
 ### revision
 - Q01 - Filter Even Numbers
 - Q02 - Square Even Numbers
